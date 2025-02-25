@@ -36,6 +36,10 @@ bot.on("message", (ctx) => {
     ctx.reply("Use /start to start the game");
     return;
   }
+  if (!ctx.message.text) {
+    ctx.reply("Invalid input. You have to enter a number");
+    return;
+  }
 
   const num = parseInt((ctx.message.text as string).trim());
   if (isNaN(num)) {
